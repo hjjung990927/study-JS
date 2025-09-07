@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>모달</title>
+        <link rel="stylesheet" href="modal.css" />
+    </head>
+    <body>
+        <div class="modal">
+            <div class="warn-modal">
+                <div id="content-wrap"></div>
+            </div>
+        </div>
+    </body>
+    <script src="modal.js"></script>
+    <script>
+        let modalMessage =
+            "<span>모든 정보를 정확히 입력하셔야</span><span>가입이 완료됩니다.</span>";
+        showWarnModal(modalMessage);
+
+        // showWarnModal(): 경고 팝업(모달)을 띄우는 함수, 조건이 안맞거나 경고 메세지 출력 시 사용
+        // 로그인 실패했을 때 → showWarnModal("아이디 혹은 비밀번호가 틀렸습니다.");
+        // 데이터 없음 → showWarnModal("검색 결과가 없습니다.");
+        // 필수 입력값 누락 → showWarnModal("필수 항목을 입력해주세요.");
+    </script>
+</html>

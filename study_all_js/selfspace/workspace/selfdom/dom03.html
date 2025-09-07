@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>메뉴판</title>
+    <style>
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid #333;
+            padding: 10px 20px;
+        }
+        fieldset {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>메뉴판</caption>
+        <thead>
+            <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>짜장면</td>
+                <td>5000원</td>
+            </tr>
+            <tr>
+                <td>짬뽕</td>
+                <td>6000원</td>
+            </tr>
+            <tr>
+                <td>탕수육</td>
+                <td>12000원</td>
+            </tr>
+        </tbody>
+    </table>
+    <fieldset>
+        <legend>메뉴 선택</legend>
+        <input type="text" id="menuInput" placeholder="메뉴명 입력" />
+        <input type="button" value="확인" />
+    </fieldset>
+    <script src="dom03.js"></script>
+</body>
+</html>

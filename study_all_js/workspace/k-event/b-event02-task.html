@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>블러, 포커스 이벤트 실습</title>
+        <style>
+            input {
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" name = "info">
+            <input type="text" name="name" placeholder="이름" />
+            <input type="text" name="age" placeholder="나이" />
+        </form>
+    </body>
+    <script>
+        const name = info.name;
+        const age = info.age;
+
+        const nameRegex = /^[가-힣]{2,5}$/;
+        const ageRegex = /^(?:1[0-1][0-9]|120|[1-9][0-9]?)$/;
+
+        name.addEventListener("focus", (e) => {
+            name.style.border = "1px solid green";
+        });
+
+        age.addEventListener("focus", (e) => {
+            age.style.border = "1px solid green";
+        });
+
+        name.addEventListener("blur", (e) => {
+            if(nameRegex.test(name.value)) {
+                name.style.border = "1px solid blue";
+                return;
+            }
+            name.style.border = "1px solid red";
+        });
+
+        age.addEventListener("blur", (e) => {
+            if(ageRegex.test(age.value)) {
+                age.style.border = "1px solid blue";
+                return;
+            }
+            age.style.border = "1px solid red";
+        });
+
+        //focus된 input태그의 테두리는 녹색으로,
+        //blur된 input태그의 테두리는 빨간색으로 설정
+        
+        // const inputs = document.querySelectorAll("form input");
+
+        // inputs.forEach((input) => {
+        //     input.addEventListener("focus", (e) => {
+        //         e.target.style.border = "1px solid green";
+        //         // input.style.border = "1px solid green";
+        //     });
+
+        //     input.addEventListener("blur", (e) => {
+        //         input.style.border = "1px solid red";
+        //     });
+        // });
+    </script>
+</html>
